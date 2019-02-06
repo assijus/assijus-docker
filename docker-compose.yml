@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+
+  assijus:
+    build: ./assijus
+    ports:
+      - "8080:8080"
+    volumes:
+      - logvolume01:/var/log
+    links:
+      - bluc
+      - testsigner
+      - redis
+    environment:
+      PROP_ASSIJUS_REDIS_MASTER_HOST: redis
+      PROP_ASSIJUS_REDIS_MASTER_PORT: 6379
+      PROP_ASSIJUS_REDIS_SLAVE_HOST:
+      PROP_ASSIJUS_REDIS_SLAVE_PORT:
+      PROP_ASSIJUS_REDIS_PASSWORD:
+      PROP_ASSIJUS_REDIS_DATABASE: 1
+      PROP_BLUCSERVICE_URL: http://bluc:8080/blucservice/api/v1
+      PROP_ASSIJUS_POPUP_URLS: http://localhost:8080
+      PROP_ASSIJUS_SYSTEMS: testsigner
+      PROP_TESTSIGNER_URL: http://testsigner:8080/testsigner/api/v1
+      PROP_TESTSIGNER_PASSWORD: substitua esse texto por uma GUID aleatória para proteger o testsigner
+      # PROP_ASSIJUS_TIMESTAMP_PUBLIC_KEY:
+      # PROP_ASSIJUS_TIMESTAMP_PRIVATE_KEY:
+
+  bluc:
+    build: ./blucservice
+    ports:
+      - "5001:8080"
+    volumes:
+      - logvolume01:/var/log
+
+  testsigner:
+    build: ./testsigner
+    ports:
+      - "5002:8080"
+    volumes:
+      - logvolume01:/var/log
+    environment:
+      PROP_TESTSIGNER_PASSWORD: substitua esse texto por uma GUID aleatória para proteger o testsigner
+
+  redis:
+    image: redis
+volumes:
+  logvolume01: {}
