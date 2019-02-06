@@ -67,7 +67,7 @@ PROP_ASSIJUS_SYSTEMS: testsigner,apolosigner
 ```
 
 Para cada sistema que é conectado via webservices, devem existir dois outros parâmetros, um para indicar a URL
-do webservice REST e outro para indicar uma senha que será passada no __header HTTP__ "Authorization". 
+do webservice REST e outro para indicar uma senha que será passada no _header HTTP_ "Authorization". 
 Para proteger o sistema em questão contra acessos não autorizados, esta senha deve ser complexa e precisa 
 ser mantida em sigilo. O webservice do sistema em questão não deve responder nenhuma chamada que não apresente
 a senha correta em seu cabeçalho "Authorization".
@@ -83,3 +83,14 @@ PROP_TESTSIGNER_PASSWORD: senha do apolosigner
 ```
 
 Os sistemas conectados deverão responder aos métodos listados na [documentação](https://github.com/assijus/assijus#utilizando-webservices) do Assijus.
+
+#### PROP_ASSIJUS_TIMESTAMP_PUBLIC_KEY e PROP_ASSIJUS_TIMESTAMP_PRIVATE_KEY
+
+Além de produzir assinaturas digitais, o Assijus também pode criar um _JWT_ com o _hash_ de um documento 
+e uma _timestamp_ para aumentar a segurança de assinaturas que sejam feitas apenas com _login_ e senha.
+Caso haja interesse em usar essa funcionalidade, será necessário configurar os parâmetros acima com chaves
+pública e privada aleatórias que podem ser obtidas através de uma chamada ao próprio Assijus:
+
+```
+POST http://.../assijus/api/v1/timestamp/generate-key-pair
+```
