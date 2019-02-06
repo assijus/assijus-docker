@@ -82,15 +82,4 @@ PROP_TESTSIGNER_URL: url do apolosigner
 PROP_TESTSIGNER_PASSWORD: senha do apolosigner
 ```
 
-É importante que os sistemas conectados respondam ao método "/test" com um JSON semelhante a este:
-
-```JSON
-{
-  "service": "AssijusSystem",
-  "url": "/testsigner/api/v1/test",
-  "partial": false,
-  "available": true,
-  "pass": true,
-  "ms": 0
-}
-```
+Os sistemas conectados deverão responder aos métodos listados na [documentação](https://github.com/assijus/assijus#utilizando-webservices) do Assijus.
