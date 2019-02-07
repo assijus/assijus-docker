@@ -8,8 +8,6 @@ RUN curl -s https://api.github.com/repos/assijus/blucservice/releases/latest \
   | cut -d '"' -f 4 \
   | wget -qi -
 
-RUN pwd
-RUN ls
 #--- DEPLOY DO ARQUIVO .WAR ---
 RUN mv blucservice.war /var/lib/jetty/webapps/ 
 
