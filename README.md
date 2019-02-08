@@ -10,8 +10,8 @@ Faça o checkout deste repositório em um diretório qualquer:
 
 ```
 $ cd /var/lib
-$ git clone https://github.com/assijus/assijus-docker.git assijus
-$ cd assijus
+$ git clone https://github.com/assijus/assijus-docker.git assijus-docker
+$ cd assijus-docker
 ```
 
 Utilize o Docker para carregar e depois disponibilizar todos os serviços necessários ao funcionamento do Assijus:
