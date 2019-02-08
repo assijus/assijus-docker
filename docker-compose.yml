@@ -23,7 +23,7 @@ services:
       PROP_ASSIJUS_POPUP_URLS: http://localhost:8080
       PROP_ASSIJUS_SYSTEMS: testsigner
       PROP_TESTSIGNER_URL: http://testsigner:8080/testsigner/api/v1
-      PROP_TESTSIGNER_PASSWORD: substitua esse texto por uma GUID aleatória para proteger o testsigner
+      PROP_TESTSIGNER_PASSWORD: substitua esse texto por uma GUID aleatoria para proteger o testsigner
       # PROP_ASSIJUS_TIMESTAMP_PUBLIC_KEY:
       # PROP_ASSIJUS_TIMESTAMP_PRIVATE_KEY:
 
@@ -41,7 +41,7 @@ services:
     volumes:
       - logvolume01:/var/log
     environment:
-      PROP_TESTSIGNER_PASSWORD: substitua esse texto por uma GUID aleatória para proteger o testsigner
+      PROP_TESTSIGNER_PASSWORD: substitua esse texto por uma GUID aleatoria para proteger o testsigner
 
   redis:
     image: redis
