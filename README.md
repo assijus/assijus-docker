@@ -22,6 +22,12 @@ $ docker-compose up
 
 Pronto, o Assijus estará ativo. Para acessá-lo, aponte o navegador Google Chrome para http://localhost:8080/assijus
 
+Se desejar testar diretamente no Linux, pode ser feito com o comando abaixo:
+
+```
+$ curl --noproxy localhost http://localhost:8080/assijus/index.html
+```
+
 ## Customizando
 
 O funcionamento do Assijus pode ser customizado 
